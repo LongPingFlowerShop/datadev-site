@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link href="style.css" rel="stylesheet">
+	<link href="threejs.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -41,7 +41,36 @@
         </div>
     </nav>
     <!--NavBar End-->
-<script src="scripts.js"></script>
+<script src="three.js"></script>
 
+
+<script>
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight);
+    document.body.appendChild( renderer.domElement);
+
+    // game logic
+    var update = function() {
+
+    };
+
+// draw scene
+var render = function() {
+    renderer.render ( scene, camera);
+};
+
+// run game loop (update, render, repeat)
+var GameLoop = function() {
+    requestAnimationFrame(GameLoop)
+
+    update();
+    render();
+};
+
+
+</script>
 </body>
 </html>
