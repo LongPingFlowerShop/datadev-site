@@ -1,0 +1,7 @@
+CREATE TABLE accounts (
+	idAccounts int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	uidAccounts TINYTEXT NOT NULL,
+	emailAccounts TINYTEXT NOT NULL,
+	pwdAccounts LONGTEXT NOT NULL
+);
+
