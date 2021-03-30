@@ -32,7 +32,7 @@ canvas {
     margin-bottom:20px;
 }
 
-/*.cardWidth {
+.cardWidth {
     width:400px;
     margin-right:250px;
     margin-left:250px;
@@ -48,8 +48,9 @@ canvas {
     color:#9a8c98;
 }
 
-.colColor {
+.colColor, .navc {
     background-color:#4a4e69;
 }
+
 
 

@@ -8,14 +8,14 @@
     <title>About</title>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link href="style.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
 </head>
 <body style="text-align:center; background-color:#22223B">
     <!--NavBar Start-->
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="navc">
+    <nav class="navbar navbar-expand-md navbar-light navc sticky-top navc">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="Img/logo.png"></a>
             <button class="navbar-toggler" ty[e="button" data-toggle="collapse"
@@ -40,6 +40,7 @@
             </div>
         </div>
     </nav>
+	</div>
 	<!--NavBar End-->
 	
 	<!--Cards Start-->
