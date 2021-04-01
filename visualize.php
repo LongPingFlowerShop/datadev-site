@@ -40,45 +40,62 @@
         </div>
     </nav>
     <!--NavBar End-->
+<!-- <script src="OrbitControls.js"></script> -->
 <script src="three.js"></script>
 
 
 <script>
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    var renderer = new THREE.WebGLRenderer();
+    let scene, camera, renderer, cube;
+
+    function init() {
+
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(
+        75, 
+        window.innerWidth / window.innerHeight, 
+        0.1, 
+        1000 
+    );
+
+    //const controls = new THREE.OrbitControls(camera, renderer.domElement)
+
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+
     renderer.setSize(window.innerWidth, window.innerHeight);
+
     document.body.appendChild(renderer.domElement);
 
-    //create the shape
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-
-    //create material, color or image texture
-    var material = new THREE.MeshBasicMaterial( {color: 0xFFFFFF, wireframe: false} );
-    var cube = new THREE.Mesh(geometry, material);
+    const geometry = new THREE.BoxGeometry(2, 2, 2);
+    const material = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
+    cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
-    //camera position
-    camera.position.z = 3;
+    camera.position.set(0, 20, 100);
 
-    // game logic
-    var update = function() {
+    }
 
-    };
+    function animate() {
+        requestAnimationFrame(animate);
 
-// draw scene
-var render = function() {
-    renderer.render ( scene, camera);
-};
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        
+        renderer.render(scene, camera);
+    }
 
-// run game loop (update, render, repeat)
-var GameLoop = function() {
-    requestAnimationFrame(GameLoop)
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
 
-    update();
-    render();
-};
+
+window.addEventListener('resize', onWindowResize, false)
+
+init();
+animate();
 
 
 </script>
