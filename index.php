@@ -17,7 +17,7 @@
 <body>
 
 <!--Login Start-->
-<!--	<div class="login">
+<!--		<div class="login">
 		<div class="login-headimg">
 			<h1> login </h1>
 		</div>
@@ -54,7 +54,7 @@
                     <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Cantact Us</a>
+                    <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="visualize.php">Visualize</a>
@@ -94,6 +94,6 @@
 	</div>
 	
 <!--Carousel End-->
-<script src="scripts.js"></script>
+<script src="/js/scripts.js"></script>
 </body>
  
