@@ -49,7 +49,7 @@
 		<div class="row padding">
 			<div class="col-md-3">
 				<div class="card cardWidth colColor">
-					<img class="card-img-top/" src="img/max.png">
+					<img class="card-img-top/" src="img/MAX.png">
 					<div class="card-body">
 						<h4 class="card-title">Max Doumitt</h4>
 						<p class="card-text">Co-Founder</p>

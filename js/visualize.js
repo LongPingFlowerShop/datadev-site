@@ -18,8 +18,6 @@ const scene = new THREE.Scene();
     camera.position.z = 5;
     camera.lookAt(0,0,0);
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-
     const animate = function () {
         requestAnimationFrame( animate );
 

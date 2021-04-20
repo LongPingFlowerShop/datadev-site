@@ -1,7 +1,6 @@
 <?php
 	require "header.php";
 ?>
-
 <html>
 <head>
 	<title>Home</title>
@@ -13,7 +12,11 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
 </head>
+
 <body>
 
 <!--Login Start-->
@@ -40,8 +43,8 @@
 <!--NavBar Start-->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="Img/logo.png"></a>
-            <button class="navbar-toggler" ty[e="button" data-toggle="collapse"
+            <a class="navbar-brand" href="#"><img src=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarresponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -65,35 +68,63 @@
     </nav>
 	<!--NavBar End-->
 	
-<!--Carousel Start-->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-	<ol class="carousel-indicators">
-		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-	</ol>
-	<div class="carousel-inner">
-		<div class="carousel-item active">
-		<img class="d-block w-100" src="#" alt="First slide">
-		</div>
-		<div class="carousel-item">
-		<img class="d-block w-100" src="#" alt="Second slide">
-		</div>
-		<div class="carousel-item">
-		<img class="d-block w-100" src="#" alt="Third slide">
-		</div>
-	</div>
-	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
-	</a>
-	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-	</a>
-	</div>
-	
-<!--Carousel End-->
-<script src="/js/scripts.js"></script>
-</body>
+
+
+
  
+
+
+    <div class="slider-container">
+      <div class="left-slide">
+        <div style="background-color: #928080">
+          <h1>Want To Be A Musician?</h1>
+          <p>The Time Is Now</p>
+        </div>
+        <div style="background-color: #2a86ba">
+          <h1>Unlock Maximum Brain Power</h1>
+          <p>Its Almost Too Good To Be True</p>
+        </div>
+        <div style="background-color: #252e33">
+          <h1>Children Are Eligible As Well</h1>
+          <p>Your Child Can Be A Prodigy</p>
+        </div>
+        <div style="background-color: #ffb866">
+          <h1>Become a Karate Master</h1>
+          <p>Within Days </p>
+        </div>
+      </div>
+      <div class="right-slide">
+        <div
+          style="
+            background-image: url('https://cdn.discordapp.com/attachments/824759283609501766/833834182617596014/karate.jpg');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://s.abcnews.com/images/International/abc_aelita_5_er_160926_16x9_992.jpg');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://cdn.discordapp.com/attachments/714297582645674005/833879886019035136/brain.jpg');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://static.vecteezy.com/system/resources/previews/001/406/054/large_2x/person-playing-guitar-free-photo.jpeg');
+          "
+        ></div>
+      </div>
+      <div class="action-buttons">
+        <button class="down-button">
+          <i class="fas fa-arrow-down"></i>
+        </button>
+        <button class="up-button">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

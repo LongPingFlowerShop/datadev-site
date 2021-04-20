@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Visualize</title>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link href="threejs.css" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<head>
+		<meta charset="utf-8">
+		<title>PLEASE</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
 
-
-</head>
-<body style="text-align:center;">
-    <!--NavBar Start-->
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+ <!--NavBar Start-->
+ <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="Img/logo.png"></a>
             <button class="navbar-toggler" ty[e="button" data-toggle="collapse"
@@ -40,71 +37,69 @@
         </div>
     </nav>
     <!--NavBar End-->
-<script src="OrbitControls.js"></script>
-<script src="three.js"></script>
+
+		<script src="js/three.js"></script>
+		<script src="js/OrbitalControls.js"></script>
+		<script src="js/GLTFLoader.js"></script>
+
+		<script>
+
+			//Scene building
+			const scene = new THREE.Scene();
+			scene.background = new THREE.Color( 0xf0f0f0 );
+			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+		
+			//renderer
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+			
+			//cube
+			const geometry = new THREE.BoxGeometry();
+			const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			const cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+			cube.scale.set(0,0,0);
+			
+			//Chair Model
+			const loader = new THREE.GLTFLoader();
+			loader.load('scene.glb', function(glb){
+				scene.add(glb.scene);
+				renderer.render(scene, camera);
+				chair = glb.scene.children[0];
+				chair.position.set(0, 0, 0);
+				chair.scale.set(1, 1, 1);
+
+			});
+
+			//camera and controls
+			camera.position.x = 700;
+			camera.position.z = 700;
+			camera.position.y = 500;
+			controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 
-<script>
+			//animate
+			const animate = function () {
+				requestAnimationFrame( animate );
+				
+			//Chair Animations
+				//chair.rotation.x += 0.01;
+				//chair.rotation.y += 0.01;
+				//chair.rotation.z += 0.01;
 
-    let scene, camera, renderer, cube;
+			//Cube Animations
+				//cube.rotation.x += 0.01;
+        		//cube.rotation.y += 0.01;
+				//cube.rotation.z += 0.01;
+				
 
-    function init() {
+				renderer.render( scene, camera );
+			
 
-    scene = new THREE.Scene();
+			};
 
-    camera = new THREE.PerspectiveCamera(
-        75, 
-        window.innerWidth / window.innerHeight, 
-        0.1, 
-        1000 
-    );
-
-    
-
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    document.body.appendChild(renderer.domElement);
-
-    const geometry = new THREE.BoxGeometry(2, 2, 2);
-    const material = new THREE.MeshBasicMaterial( {color: 0x0000ff} );
-    cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-
-    camera.position.set(0, 20, 100);
-    camera.lookAt(0, 0, 0);
-
-    const controls = new THREE.OrbitControls(camera, renderer.domElement)
-
-    }
-
-    function animate() {
-        requestAnimationFrame(animate);
-
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        
-        constrols.update();
-
-        renderer.render(scene, camera);
-
-     
-    }
-
-    function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    }
-
-
-window.addEventListener('resize', onWindowResize, false)
-
-init();
-animate();
-
-
-</script>
-</body>
+			animate();
+		</script>
+	</body>
 </html>
