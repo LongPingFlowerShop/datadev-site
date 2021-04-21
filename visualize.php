@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>PLEASE</title>
+		<title>Visualize</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 		<style>
 			body { margin: 0; }
@@ -11,7 +11,7 @@
 	<body>
 
  <!--NavBar Start-->
- <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+ <nav style="background-color: #949427;" class=" navbar navbar-expand-md navbar-light  sticky-top navc">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="Img/logo.png"></a>
             <button class="navbar-toggler" ty[e="button" data-toggle="collapse"
@@ -27,7 +27,7 @@
                     <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Cantact Us</a>
+                    <a class="nav-link" href="contact.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="visualize.php">Visualize</a>
@@ -38,19 +38,26 @@
     </nav>
     <!--NavBar End-->
 
+        <h1 style="text-align: center; background-color: blue; margin-bottom: 0%;">Could Take a Moment to Load</h1>
+        <h2 style="text-align: center; background-color: blue; margin-bottom: 0%;">Try Left/Right Click or Scrolling to Move Around</h2>
+
 		<script src="js/three.js"></script>
 		<script src="js/OrbitalControls.js"></script>
 		<script src="js/GLTFLoader.js"></script>
+        <script>
+            //I wrote all this. It hurt me physically. I don't recomend it. -Max
+            //The Documentation is somewhat inacurate. everyone writes it differently. Not super fun. I don't recomend it. -Max
+        </script>
 
 		<script>
 
 			//Scene building
 			const scene = new THREE.Scene();
-			scene.background = new THREE.Color( 0xf0f0f0 );
+			scene.background = new THREE.Color( 0x808080 );
 			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
 		
 			//renderer
-			const renderer = new THREE.WebGLRenderer();
+			const renderer = new THREE.WebGLRenderer({antialias: true});
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 			
@@ -79,7 +86,7 @@
 			controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 
-			//animate
+			//animate(no longer does anything but remove the slashes for a fun time)
 			const animate = function () {
 				requestAnimationFrame( animate );
 				
@@ -103,3 +110,4 @@
 		</script>
 	</body>
 </html>
+

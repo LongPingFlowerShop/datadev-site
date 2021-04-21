@@ -10,10 +10,10 @@
 </head>
 <body style="background-color:#5613; text-align:center;">
     <!--NavBar Start-->
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-md navbar-light bg-dark sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="Img/logo.png"></a>
-        <button class="navbar-toggler" ty[e="button" data-toggle="collapse"
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarresponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
