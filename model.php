@@ -86,11 +86,11 @@
 			//Chair Animations
 				//chair.rotation.x += 0.01;
 				//chair.rotation.y += 0.01;
-				chair.rotation.z += 0.01;
+				//chair.rotation.z += 0.01;
 
 			//Cube Animations
 				//cube.rotation.x += 0.01;
-        		cube.rotation.y += 0.01;
+        		//cube.rotation.y += 0.01;
 				//cube.rotation.z += 0.01;
 				
 

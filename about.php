@@ -15,10 +15,10 @@
 <body style="text-align:center; background-color:#22223B">
     <!--NavBar Start-->
 	<div class="navc">
-    <nav class="navbar navbar-expand-md navbar-light navc sticky-top navc">
+    <nav style="background-color: #6e84d2;"     class="navbar navbar-expand-md navbar-light navc sticky-top navc">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="Img/logo.png"></a>
-            <button class="navbar-toggler" ty[e="button" data-toggle="collapse"
+            <a class="navbar-brand" href="http://datadev.devcatalyst.com/~mahs_mdoumitt/index.php"><img src="img/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarresponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,6 +37,7 @@
                     <a class="nav-link" href="visualize.php">Visualize</a>
                 </li>
             </ul>
+			<form action="includes/logout.inc.php" method="post"><button style="background-color:#6e84d2; color:black;" type="submit" name="logout-submit"><b>Logout</b></button></form>
             </div>
         </div>
     </nav>
@@ -103,7 +104,7 @@
 		</ol>
 		<div class="carousel-inner"> 
 		  <div class="carousel-item active">
-			<img class="d-block w-100" src="#" alt="First slide">
+			<img class="d-block w-100" src="" alt="First slide">
 		  </div>
 		  <div class="carousel-item">
 			<img class="d-block w-100" src="#" alt="Second slide">

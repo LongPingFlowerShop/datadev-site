@@ -33,15 +33,10 @@ canvas {
 }
 
 .cardWidth {
-    width:400px;
-    margin-right:250px;
-    margin-left:250px;
-    height:800px;
-}
-
-.cardWidth {
-    width:20%;
-    height:75%;
+  width:400px;
+  margin-right:250px;
+  margin-left:250px;
+  height:800px;
 }
 
 .aboutParagraph {

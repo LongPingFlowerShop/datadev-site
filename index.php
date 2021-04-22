@@ -16,36 +16,25 @@
 
 <body>
 
-<!--Login Start-->
-<!--		<div class="login">
-		<div class="login-headimg">
-			<h1> login </h1>
-		</div>
-		<div class="login-form">
-			<div>
-				<form action="includes/login.inc.php" method="post">
-					<input type="text" name="uid" placeholder="username/email...">
-					<input type="password" name="pwd" placeholder="password">
-					<button type="submit" name="login-submit">Login</button>
-				</form>
-				<a href="signup.php">Signup</a>
-				<form action="includes/logout.inc.php" method="post">
-					<button type="submit" name="logout-submit"> Logout</button>
-				</form>
-			</div>
-		</div>
-	</div> -->
-<!--Login End-->
+<?php
+  if (!isset($_SESSION["userId"])) {
+    require "includes.php";
+  }
+  ?>
+  <!--else {
+    echo '<form action="includes/logout.inc.php" method="post"><button type="submit" name="logout-submit"> Logout</button></form>';
+  } -->
+ 
 
 <!--NavBar Start-->
-<nav class="navbar navbar-expand-md navbar-light bg-dark sticky-top">
+<nav style="background-color: #6e84d2;" class="navbar navbar-expand-md navbar-light  sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src=""></a>
+            <a class="navbar-brand" href="http://datadev.devcatalyst.com/~mahs_mdoumitt/index.php"><img src="img/logo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarresponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div style="font-weight: bold;" class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Home</a>
@@ -60,22 +49,25 @@
                     <a class="nav-link" href="visualize.php">Visualize</a>
                 </li>
             </ul>
+            <form action="includes/logout.inc.php" method="post"><button style="background-color:#6e84d2; color:black;" type="submit" name="logout-submit"><b>Logout</b></button></form>
             </div>
         </div>
     </nav>
 	<!--NavBar End-->
+
+
 	
     <div class="slider-container">
       <div class="left-slide">
-        <div style="background-color: #928080;">
+        <div style="background-color: #321925;">
           <h1>Want To Be A Musician?</h1>
           <p>The Time Is Now</p>
         </div>
-        <div style="background-color: #2a86ba">
+        <div style="background-color: #00CED1">
           <h1>Unlock Maximum Brain Power</h1>
           <p>Its Almost Too Good To Be True</p>
         </div>
-        <div style="background-color: #252e33">
+        <div style="background-color: #E388FF">
           <h1>Children Are Eligible As Well</h1>
           <p>Your Child Can Be A Prodigy</p>
         </div>
